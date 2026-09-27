@@ -4,50 +4,7 @@
    الأقسام أسفل الهيرو: منطق البطاقة (ملء المحتوى + عدّاد + ظهور)
    ============================================================ */
 
-const WEDDING_CONFIG = (typeof window !== "undefined" && window.__INVITE__ && window.__INVITE__.config) || {
-  groom: "آدم",
-  bride: "ميرا",
-
-  date: "2026-11-20T19:00:00",
-  dateText: "يوم الجمعة، ٢٠ تشرين الثاني ٢٠٢٦",
-  timeText: "الساعة السابعة مساءً",
-
-  heroSub: "يتشرّفان بدعوتكم لمشاركتهما فرحة العمر",
-
-  verse: "اللّهُمَّ بارِكْ لهُما وبارِكْ عليهِما واجمَعْ بينهُما في خير",
-
-  invitationText: "بقلوبٍ مفعمةٍ بالفرح والسرور، نتشرّف بدعوتكم لمشاركتنا أجمل لحظات حياتنا في حفل زفافنا. حضوركم شرفٌ لنا وبهجةٌ تكتمل بها فرحتنا.",
-
-  groomParents: "نجل السيّد كريم عبد الله و السيّدة هدى",
-  brideParents: "كريمة السيّد سامي حسن و السيّدة رنا",
-
-  venueName: "قاعة بابل الكبرى",
-  venueAddr: "بغداد — المنصور",
-  mapUrl: "https://www.google.com/maps/search/?api=1&query=Babylon+Hotel+Baghdad",
-
-  program: [
-    { time: "٧:٠٠ مساءً", title: "استقبال الضيوف" },
-    { time: "٧:٣٠ مساءً", title: "عقد القران" },
-    { time: "٨:٣٠ مساءً", title: "الكوكتيل" },
-    { time: "٩:٣٠ مساءً", title: "العشاء" },
-    { time: "١٠:٣٠ مساءً", title: "الرقص والسهرة" },
-  ],
-
-  notes: [
-    "يُرجى الحضور قبل الموعد بنصف ساعة",
-    "نتشرّف بحضوركم بأبهى حلّة",
-    "الدعوة تشمل حاملها والعائلة الكريمة",
-  ],
-
-  closingNote: "حضوركم يزيّن فرحتنا",
-  hashtag: "#آدم_وميرا",
-  contactLabel: "للاستفسار والتأكيد",
-  contactName: "أبو آدم",
-  contactPhone: "+9647700000000",
-  closingFamilies: "عائلة عبد الله  &  عائلة حسن",
-
-  images: { venue: "/templates/classic/assets/venue.jpg", background: "" },
-};
+const WEDDING_CONFIG = (typeof window !== "undefined" && window.__INVITE__ && window.__INVITE__.config) || {};
 
 /* ---------------- تعبئة المحتوى ---------------- */
 function fillContent() {
@@ -234,7 +191,7 @@ function buildContact(c) {
   if (!link) return;
   const wa = (c.contactPhone || "").replace(/[^0-9]/g, "");
   if (wa) {
-    link.href = `https://wa.me/${wa}`;
+    link.href = c.contactUrl || `https://wa.me/${wa}`;
     link.target = "_blank";
     link.rel = "noopener";
     link.innerHTML = `<span aria-hidden="true">&#9742;</span> `;
