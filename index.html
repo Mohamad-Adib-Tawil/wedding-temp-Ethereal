@@ -394,7 +394,7 @@
     var AV=["#b8924f","#8a7458","#c9a86a","#a08a5e","#d8bc8a"];
     var _cfg=(window.__INVITE__||{}).config||{}; var STORY={kicker:"حفل زفاف",primary:(_cfg.groom||"")+" & "+(_cfg.bride||""),dateText:_cfg.dateText||""};
     /* الكردية: خطوط القوالب الزخرفية لا تغطي حروفها — الكانفس يرسم بڤازیرماتن */
-    var ST={orn:"🤍",accent:"#b8924f",font:"\"Aref Ruqaa\"",body:"Tajawal",honored:"بكل حبٍّ وسرور",attend:"نتشرّف بتلبية الدعوة لحضور",promise:"إن شاء الله حاضرون 🤍",brand:"صُنع من خلال منصة هلاهيل"};
+    var ST={orn:"🤍",accent:"#b8924f",font:"\"Aref Ruqaa\"",body:"Tajawal",honored:"بكل حبٍّ وسرور",attend:"نتشرّف بتلبية الدعوة لحضور",promise:"إن شاء الله حاضرون 🤍",brand:""};
     /* نصوص بطاقة الستوري مجموعةً بمكان واحد: القوالب التي تختار لغة الضيف
        بنفسها (بوابة لغة داخل القالب) تبدّلها بضبط window.__da3waStoryText
        بمفاتيح honored/attend/kicker/primary/dateText/promise/brand/font/body.
@@ -425,7 +425,7 @@
     var PREV=false;
     /* NOBRAND: بلا توقيع المنصّة — لا سطر «صُنع من خلال» ولا halaheel.com على الستوري
        والبطاقة، ولا بطاقة «جهّز دعوتي» بعد الإرسال (بطلب صاحب الدعوة — custom-templates) */
-    var NOBRAND=false;
+    var NOBRAND=true;
     var att=WO?"maybe":"yes";
     var pills=document.querySelectorAll('#da3wa-att .pill');
     pills.forEach(function(p){p.addEventListener('click',function(){att=p.getAttribute('data-v');pills.forEach(function(x){x.setAttribute('aria-pressed', x===p?'true':'false');});});});
